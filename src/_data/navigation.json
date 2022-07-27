@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "text": "Ride",
+      "url": "/ride/"
+    },
+    {
+      "text": "About",
+      "url": "/about/"
+    },
+    {
+      "text": "Donate",
+      "url": "/donate/"
+    }
+  ]
+}

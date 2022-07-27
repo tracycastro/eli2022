@@ -1,0 +1,31 @@
+<article class="donate">{% include "partials/full-logo.svg" %}</article>
+<article class="donate">
+  <p>
+    On October 1 & 2, 2022, I will ride my bike 170 miles through the Texas Hill
+    Country in the Bike MS: Valero Ride to the River. My goal is to end Multiple
+    Sclerosis forever.
+  </p>
+  <p>
+    There are a lot of emergencies happening right now, a lot of causes that
+    need our help. Supporting this effort to end MS - a disease first documented
+    in the 1300s - isn’t about addressing a new threat, it’s about winning the
+    end game against a disease that has upended the lives of millions for
+    centuries. In the last few years, the National MS Society, through rides
+    like this one, has made enormous strides toward understanding, treating and
+    preventing MS. We are very close to a cure to end MS forever. With your
+    help, I aim to raise ${{ rideParticipant.goal }} for the National MS Society
+    – I’ve still got ${{ rideParticipant.goal - rideParticipant.donations }} to
+    go to hit that goal. I'd surely appreciate the help.
+  </p>
+  <p>
+    Thank you to all who have donated! You are helping create a world free of
+    MS:
+  </p>
+</article>
+<article class="donate">
+  <ul>
+    {% for json in donors %}
+    <li>{{ json.displayName }}: ${{ json.sumDonations }}</li>
+    {% endfor %}
+  </ul>
+</article>

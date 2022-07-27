@@ -1,0 +1,61 @@
+<article class="ride">
+  <h1>Ride</h1>
+  <p>
+    This will be my 12th year riding to end MS, and I’m taking on a few new
+    challenges to do my part. This will be my fist Bike MS century, with a
+    little more than 100 miles on day one. It’s also the hilliest MS ride I’ve
+    done, with a second day that winds through the Texas Hill country.
+  </p>
+  <p>
+    I’ll be training in Austin every Sunday morning, starting at 8:30 AM at the
+    Veloway. If you’d like to join me, just drop me a line and I’ll get you an
+    invitation.
+  </p>
+  <p>
+    To keep me honest in my training, I’m posting my progress here. It’s been
+    almost a year since I’ve ridden regularly, so this is going to be an intense
+    few months for me.
+  </p>
+  <div class="container">
+    {% for rides in strava %} {% if rides.type === 'Ride' %} {% set cutOffDate =
+    '2022-01-01 00:00:00' %} {% if rides.start_date > cutOffDate %}
+    <div class="ride-feed">
+      <div class="ride-header">
+        <div class="item ride-date">{{rides.start_date | dateFilter }}</div>
+        <div class="item ride-name">{{rides.name}}</div>
+      </div>
+      <!--.ride-header-->
+      <div class="ride-body">
+        <div class="item ride-distance">
+          <p>distance:</p>
+          <p>
+            <span class="distance-value"
+              >{{(rides.distance * 0.00062137) | round(2)}}</span
+            >
+            miles
+          </p>
+        </div>
+        <div class="item ride-speed">
+          <p>average speed:</p>
+          <p>{{(rides.average_speed * 2.237) | round(2) }} mph</p>
+        </div>
+        <div class="item ride-climb">
+          <p>elevation:</p>
+          <p>{{(rides.total_elevation_gain * 3.281) | round }} ft</p>
+        </div>
+        <div class="item ride-temp">
+          <p>temperature:</p>
+          <p>{{((rides.average_temp * 9/5) + 32) | round }}ºF</p>
+        </div>
+        <div class="item ride-time">
+          <p>time:</p>
+          <p>{{rides.moving_time | secondFilter }}</p>
+        </div>
+      </div>
+      <!--.ride-body-->
+    </div>
+    <hr />
+    <!--.ride-feed-->
+    {% endif %} {% endif %} {% endfor %}
+  </div>
+</article>
