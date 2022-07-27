@@ -1,4 +1,27 @@
 <article class="donate">{% include "partials/full-logo.svg" %}</article>
+
+{% set currentTotal = (rideParticipant.goal - rideParticipant.donations) %} {%
+set progressBar = (rideParticipant.donations / rideParticipant.goal)*100 %}
+<article class="donate">
+  I have raised {{ progressBar | round(2) }}% of my goal.
+  <div class="progress">
+    <div class="progress-wrapper">
+      <div class="progress-bar-bg">
+        <div
+          class="progress-bar"
+          role="progressbar"
+          aria-valuenow="0"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          style="width: {{ progressBar }}%;"
+        ></div>
+      </div>
+    </div>
+  </div>
+  <p class="raised">${{ rideParticipant.donations }} Raised</p>
+  <p class="goal">Goal ${{rideParticipant.goal}}</p>
+</article>
+
 <article class="donate">
   <p>
     On October 1 & 2, 2022, I will ride my bike 170 miles through the Texas Hill
@@ -14,8 +37,8 @@
     like this one, has made enormous strides toward understanding, treating and
     preventing MS. We are very close to a cure to end MS forever. With your
     help, I aim to raise ${{ rideParticipant.goal }} for the National MS Society
-    – I’ve still got ${{ rideParticipant.goal - rideParticipant.donations }} to
-    go to hit that goal. I'd surely appreciate the help.
+    – I’ve still got ${{ currentTotal }} to go to hit that goal. I'd surely
+    appreciate the help.
   </p>
   <p>
     Thank you to all who have donated! You are helping create a world free of
