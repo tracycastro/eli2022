@@ -1,6 +1,16 @@
+:root {
+  --size-step-0: clamp(1rem, calc(0.91rem + 0.45vw), 1.25rem);
+  --size-step-1: clamp(1.33rem, calc(1.11rem + 1.1vw), 1.94rem);
+  --size-step-2: clamp(1.78rem, calc(1.33rem + 2.23vw), 3rem);
+  --size-step-3: clamp(2.37rem, calc(1.54rem + 4.16vw), 4.66rem);
+  --size-step-4: clamp(3.16rem, calc(1.68rem + 7.38vw), 7.22rem);
+  --size-step-5: clamp(4.21rem, calc(1.67rem + 12.68vw), 11.18rem);
+  --font-base: 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
 html {
   background-color: whitesmoke;
   font-family: georgia, ui-serif, serif;
+  font-family: var(--font-base);
 }
 /*
   1. Use a more-intuitive box-sizing model.
@@ -32,6 +42,18 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
+main {
+  width: min(60ch, 100vw - 2rem);
+  margin-inline: auto;
+  padding-block: 5rem;
+}
+article {
+  margin-block-start: min(4rem, 8vh);
+}
+article svg:not() {
+  padding: 2rem;
+}
+
 /*
   6. Improve media defaults
 */
@@ -64,6 +86,35 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+h1,
+h2 {
+  color: #0279ac;
+}
+p {
+  font-size: clamp(1rem, calc(0.91rem + 0.45vw), 1.25rem);
+  line-height: 1.5;
+  color: #4b4c4e;
+  font-weight: 500;
+  margin-block-end: 1em;
+}
+h3 {
+  font-size: var(--size-step-0);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+h2 {
+  font-size: var(--size-step-1);
+  font-weight: 600;
+}
+h1 {
+  font-size: var(--size-step-2);
+  font-family: var(--font-base);
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: #6d6e71;
+}
+
 /*
   9. Create a root stacking context
 */
@@ -98,23 +149,20 @@ ul.nav__list li a {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
-  font-family: -apple-system, sans-serif;
-  font-weight: 800;
-  font-size: 1.1rem;
+  font-family: var(--font-base);
+  font-weight: 600;
+  font-size: var(--size-step-0);
 }
 ol[class],
 ul[class] {
   padding: 0;
   list-style: none;
 }
-main {
-  padding: 5rem;
-}
 
 .donate,
 .ride,
 .about {
-  max-width: 500px;
+  /* max-width: 60ch; */
   margin-inline: auto;
 }
 .skip-link {
@@ -184,9 +232,9 @@ main {
 
 p.raised,
 p.goal {
-  font-size: 0.7em;
-  font-weight: 300;
-  color: var(--yellow);
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #4b4c4e;
 }
 
 @-webkit-keyframes progress-bar-anim {
