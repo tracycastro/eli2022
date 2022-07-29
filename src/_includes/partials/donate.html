@@ -41,12 +41,14 @@ set progressBar = (rideParticipant.donations / rideParticipant.goal)*100 %}
     appreciate the help.
   </p>
   <p>
-    Thank you to all who have donated! You are helping create a world free of
-    MS:
+    <em>
+      Thank you to all who have donated! You are helping create a world free of
+      MS:</em
+    >
   </p>
 </article>
 <article class="donate">
-  <ul>
+  <ul class="donor-list">
     {% for json in donors %}
     <li>{{ json.displayName }}: ${{ json.sumDonations }}</li>
     {% endfor %}

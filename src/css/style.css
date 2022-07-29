@@ -47,11 +47,29 @@ main {
   margin-inline: auto;
   padding-block: 5rem;
 }
-article {
-  margin-block-start: min(4rem, 8vh);
+article:not(:first-of-type) {
+  margin-block-start: min(3rem, 4vh);
 }
-article svg:not() {
-  padding: 2rem;
+article svg {
+  padding: 1rem 3rem 2rem;
+}
+article svg.full-logo {
+  padding-block-start: 1rem;
+  padding-inline: 0;
+}
+section:not(:first-of-type),
+.past-logo:not(:first-of-type) {
+  margin-block-start: min(2rem, 4vh);
+}
+/* .logo-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+} */
+.past-logo {
+  box-shadow: 0 5px 20px -20px rgb(0 0 0 / 70%);
+  border-radius: 3rem;
+  border: 1px solid #b4e6fc;
+  padding: 2rem 3rem;
 }
 
 /*
@@ -86,7 +104,6 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
-h1,
 h2 {
   color: #0279ac;
 }
@@ -97,14 +114,26 @@ p {
   font-weight: 500;
   margin-block-end: 1em;
 }
+ul.donor-list li {
+  font-size: clamp(1rem, calc(0.91rem + 0.45vw), 1.25rem);
+  line-height: 1.5;
+  color: #0279ac;
+  font-weight: 500;
+}
 h3 {
   font-size: var(--size-step-0);
   font-weight: 700;
   text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  background-color: #4b4c4e;
+  width: fit-content;
+  padding-inline: 1rem;
+  border-radius: 3rem;
 }
 h2 {
   font-size: var(--size-step-1);
-  font-weight: 600;
+  font-weight: 800;
+  color: #0279ac;
 }
 h1 {
   font-size: var(--size-step-2);
@@ -112,7 +141,7 @@ h1 {
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
-  color: #6d6e71;
+  color: #0279ac;
 }
 
 /*
@@ -146,7 +175,7 @@ ul.nav__list li {
   padding-inline-start: 1.5rem;
 }
 ul.nav__list li a {
-  color: white;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   text-transform: uppercase;
   font-family: var(--font-base);
