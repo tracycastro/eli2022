@@ -8,8 +8,9 @@
     <title>{{ title }}</title>
   </head>
   <body>
+    {% include "partials/site-head.html" %}
     <main tabindex="-1" id="main-content">
-      {% include "partials/site-head.html" %} {% block content %}{% endblock %}
+      {% block content %}{% endblock %}
     </main>
   </body>
 </html>
