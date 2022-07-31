@@ -91,10 +91,6 @@ p.subtitle {
   align-content: center;
   overflow: auto;
 }
-/* .logo-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-} */
 .past-logo,
 .ride-feed {
   box-shadow: var(--shadow-elevation-low);
