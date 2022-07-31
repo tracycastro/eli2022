@@ -76,7 +76,7 @@ article svg.full-logo {
 section:not(:first-of-type),
 .past-logo:not(:first-of-type),
 .ride-feed:not(:first-of-type) {
-  margin-block-start: min(2rem, 4vh);
+  margin-block-start: min(1rem, 5vh);
 }
 
 p.subtitle {
@@ -84,12 +84,6 @@ p.subtitle {
   margin-block-end: 0;
   font-size: clamp(0.7rem, calc(0.8rem + 0.8vw), 0.9rem);
 }
-/* .ride-header {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-} */
 .ride-body {
   padding-block-start: 1rem;
   display: grid;
