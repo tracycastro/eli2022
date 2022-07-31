@@ -23,15 +23,15 @@
     <div class="ride-feed">
       <div class="ride-header">
         <p class="subtitle">{{rides.start_date | dateFilter }}</p>
-      <h2>{{rides.name}}</h2>
-    </div>
-<div class="ride-body">
+        <h2>{{rides.name}}</h2>
+      </div>
+      <div class="ride-body">
       <p>
         <strong>Distance:</strong> {{(rides.distance * 0.00062137) | round(2)}}
         miles
       </p>
       <p>
-        <strong>Avg speed:</strong> {{(rides.average_speed * 2.237) | round(2) }}
+        <strong>Average speed:</strong> {{(rides.average_speed * 2.237) | round(2) }}
         mph
       </p>
       <p>
@@ -42,8 +42,8 @@
         <strong>Temp:</strong> {{((rides.average_temp * 9/5) + 32) | round }}ºF
       </p>
       <p><strong>Time:</strong> {{rides.moving_time | secondFilter }}</p>
+      </div>
     </div>
-  </div>
     <!--.ride-feed-->
     {% endif %} {% endif %} {% endfor %}
   </div>

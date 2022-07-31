@@ -349,4 +349,7 @@ p.goal {
   ul.nav__list li {
     padding-inline: 2rem;
   }
+  .ride-body {
+    grid-template-columns: 1fr;
+  }
 }
