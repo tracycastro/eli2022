@@ -1,4 +1,4 @@
 ---
-title: 'Ride With Eli'
+title: 'Home'
 layout: 'layouts/home.html'
 ---

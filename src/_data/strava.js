@@ -21,7 +21,7 @@ module.exports = async function () {
       }),
     },
   });
-  console.log(`the access token is:${json2.access_token}`);
+
   let url3 = `https://www.strava.com/api/v3/athlete/activities?access_token=${json2.access_token}`;
   let rides = await Cache(url3, {
     duration: '1h', // 1 day
