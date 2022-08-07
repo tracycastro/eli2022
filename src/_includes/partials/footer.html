@@ -1,0 +1,94 @@
+<footer>
+  <div class="footer-content">
+    <div class="button-container">
+      <button class="btn-toggle">Toggle Dark Mode</button>
+    </div>
+    <section class="toggle-content">
+      <fieldset aria-labelledby="theme-switcher-control" id="theme-switcher">
+        <button
+          type="button"
+          data-theme="adaptive"
+          aria-pressed="true"
+          class="button button--text"
+        >
+          Adaptive
+        </button>
+        <button
+          type="button"
+          data-theme="light"
+          aria-pressed="false"
+          class="button button--text"
+        >
+          Light
+        </button>
+        <button
+          type="button"
+          data-theme="dark"
+          aria-pressed="false"
+          class="button button--text"
+        >
+          Dark
+        </button>
+      </fieldset>
+    </section>
+  </div>
+</footer>
+<script>
+  const btn = document.querySelector('footer button');
+  const toggleContent = document.querySelector('.toggle-content');
+  const themeSwitcher = document.getElementById('theme-switcher');
+
+  //this hides the dark mode toggle content to start:
+
+  const closeThemeSwitcher = () => {
+    toggleContent.classList.add('hide');
+  };
+
+  closeThemeSwitcher();
+
+  const closeThemeSwitcherOnExternal = (e) => {
+    if (
+      toggleContent.classList.contains('hide') == false &&
+      e.target !== btn &&
+      e.target !== themeSwitcher &&
+      !e.target.dataset.theme
+    ) {
+      closeThemeSwitcher();
+    }
+  };
+
+  function handleBtnClick() {
+    toggleContent.classList.toggle('hide');
+    toggleContent.scrollIntoView();
+  }
+  btn.addEventListener('click', handleBtnClick);
+
+  document.addEventListener('keydown', (e) => {
+    if (
+      toggleContent.classList.contains('hide') == false &&
+      e.key === 'Escape'
+    ) {
+      closeThemeSwitcher();
+      console.log('closed theme switcher');
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    closeThemeSwitcherOnExternal(e);
+  });
+
+  const applyTheme = () => {
+    themeSwitcher.setAttribute('aria-pressed', 'true');
+  };
+
+  themeSwitcher.addEventListener('click', (e) => {
+    const theme = e.target.dataset.theme;
+    if (theme) {
+      const button = e.target;
+      themeSwitcher
+        .querySelectorAll('button')
+        .forEach((b) => b.setAttribute('aria-pressed', 'false'));
+      button.setAttribute('aria-pressed', 'true');
+    }
+  });
+</script>

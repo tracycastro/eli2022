@@ -27,5 +27,6 @@ module.exports = async function () {
     duration: '1h', // 1 day
     type: 'json',
   });
+  console.log(rides);
   return rides;
 };
