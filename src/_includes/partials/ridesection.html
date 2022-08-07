@@ -23,7 +23,7 @@
     <div class="ride-feed">
       <div class="ride-header">
         <p class="subtitle">{{rides.start_date | dateFilter }}</p>
-        <h2>{{rides.name}}</h2>
+        <h2> <a href="https://www.strava.com/activities/{{ rides.id}}" target="_blank" rel="noopener noreferrer">{{rides.name}}</a></h2>
       </div>
       <div class="ride-body">
       <p>
