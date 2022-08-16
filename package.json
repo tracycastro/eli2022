@@ -1,7 +1,6 @@
 {
   "name": "eli2022",
   "version": "1.0.0",
-  "description": "",
   "main": ".eleventy.js",
   "scripts": {
     "start": "npx eleventy --serve"
@@ -14,5 +13,14 @@
     "@11ty/eleventy-fetch": "^3.0.0",
     "dotenv": "^16.0.1",
     "moment": "^2.29.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tracycastro/eli2022.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tracycastro/eli2022/issues"
+  },
+  "homepage": "https://github.com/tracycastro/eli2022#readme",
+  "description": ""
 }
